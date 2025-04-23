@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+header{ 
+       background-color:pink;
+      padding: 10px;
+      text-align: center;
+    }
+footer {
+      background-color: pink;
+      padding: 5px;
+      text-align: center;
+      bottom:0;
+      width:100%;
+      left:0;
+    }
+.topnav{
+  overflow: hidden;
+}
+
+.topnav h2 {
+  float: left;
+  color:black;
+  text-align: left;
+  padding:5px 5px;
+  font-size: 22px;
+}
+.topnav a {
+  float: right;
+  padding: 12px;
+  color: red;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.topnav a:hover {
+  background-color: white;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+  }
+}
+.topnav .search-container {
+  float: center;
+}
+
+.topnav input[type=text] {
+  padding: 10px 20px;
+  margin-top: 5px;
+  font-size: 15px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: center;
+  margin-top: 8px;
+  margin-right: 30px;
+  background: transparent;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+   .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+.content{
+background-color:white;
+padding:10px;
+width:100%;
+overflow:auto;
+}
+.image{
+align:left;
+border-radius:50%;
+}
+
+</style>
+</head>
+<body>
+<header>
+<div class="topnav">
+<img align="left" src="logo.png" width="80" height="80" style="border-radius:50%; margin-top:20px"/>
+  <h2><b>HITS Book Store</b></h2>
+  <a  href="#"><i style="color:black;"class="fa fa-fw fa-user"></i></a> 
+  <a  href="#"><i style="color:black;"class="fa fa-fw fa-shopping-cart"></i></a> 
+  <a href="#"><i class="fa fa-fw fa-heart"></i></a> 
+ <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</div>
+</header>
+<div class="content">
+<h1>Featured Authors</h1>
+<div class="image">
+  <img src="author1.jpg" alt="Example Image">
+</div>
+<div class="img-content">
+  <h2>Arundhati Roy</h2>
+  <p>Arundhati Roy is an Indian writer, best known for her book The God of Small Things (1997), which won the Man Booker Prize
+   for Fiction in 1997. She was born in Shillong, Meghalaya, India</p>
+</div><hr>
+<div class="image">
+  <img src="author2.jpg" alt="Example Image">
+</div>
+<div class="img-content">
+  <h2>STEPHEN COONTS</h2>
+  <p>STEPHEN COONTS is the author of sixteen New York Times bestselling books that have been translated and published around the world.
+ A former naval aviator and Vietnam combat veteran, he is a graduate of West Virginia University and the University of C </p>
+</div><hr>
+<div class="image">
+  <img src="author3.jpg" alt="Example Image">
+</div>
+<div class="img-content">
+  <h2>William Wordsworth</h2>
+  <p>On April 7, 1770, William Wordsworth was conceived in Cockermouth, Cumbria, England. Wordsworth's mom kicked the bucket when he was 
+eight—this experience shapes a lot of his later work. Wordsworth went to Hawkshead Grammar School, where his adorat</p>
+</div><hr>
+<div class="image">
+  <img src="author4.jpg" alt="Example Image">
+</div>
+<div class="img-content">
+  <h2>Stephen Edwin King </h2>
+  <p>Stephen Edwin King was conceived in Portland, Maine in 1947, the second child of Donald and Nellie Ruth Pillsbury King. 
+After his folks isolated when Stephen was a little child, he and his more established sibling, David, were raised by his mom.</p>
+</div><hr>
+<div class="image">
+  <img src="author5.jpg" alt="Example Image">
+</div>
+<div class="img-content">
+  <h2>John Michael Green</h2>
+  <p>John Michael Green is the author of Looking for Alaska, An Abundance of Katherines, Paper Towns, and The Fault in Our Stars. He is an American author, vlogger, writer, 
+producer, actor and editor. He was born in Indianapolis, Indiana on august 24</p>
+</div><hr>
+<div class="image">
+  <img src="author6.jpg" alt="Example Image">
+</div>
+<div class="img-content">
+  <h2>Gillian Flynn</h2>
+  <p>Gillian Flynn was born February 24, 1971 in Kansas City, Missouri. She is an American author, screenwriter, comic book 
+writer and former television critic for Entertainment Weekly. Flynn has published three novels, which are all thrillers: Sharp</p>
+</div><hr>
+<div class="image">
+  <img src="author7.jpg" alt="Example Image">
+</div>
+<div class="img-content">
+  <h2>Gayle Forman</h2>
+  <p>Gayle Forman is an American young adult fiction author. She was born in June 5, 1978 in in Los Angeles. 
+Her best known novel is If I Stay which topped the New York bestseller list for young adult fiction category. </p>
+</div>
+
+</div>
+<footer>
+ <div style="text-align:center">
+  <p>&copy; 2023 Your Book Store. All rights reserved.</p>
+  <p>Contact us: <a href="mailto:info@yourbookstore.com">ssst@yourbookstore.com</a></p>
+  <p>Follow us: 
+    <a href="#" class="social-link"><i class="fa fa-facebook"></i></a>
+    <a href="#" class="social-link"><i class="fa fa-twitter"></i></a>
+    <a href="#" class="social-link"><i class="fa fa-instagram"></i></a>
+  </p>
+</footer>
+</body>
+</html>

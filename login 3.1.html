@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+   body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(to right, #C17130, #FFFFFF);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+background: url("https://img.freepik.com/premium-photo/empty-copy-space-tabletop-with-books-table-lamp-blurred-bookshelves-background_67155-26610.jpg?w=1060") center/cover no-repeat;
+        }
+
+        .login-container {
+            padding: 30px;
+            border-radius: 8px;
+            width: 400px;
+            text-align: center;
+            
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1.0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .login-container:hover {
+            transform: scale(1.02);
+        }
+
+        .login-container h2 {
+          color:white;
+            margin-top:5px;
+            
+        }
+
+        .input-group {
+            position: relative;
+            width: 100%;
+            margin: 15px 0;
+        }
+
+        .input-group i {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-left: 18px;
+            color: #C17130;
+        }
+
+        .input-field {
+            width: calc(100% - 25px);
+            padding: 14px;
+            box-sizing: border-box;
+         
+            border-radius: 25px;
+            font-size: 16px;
+            padding-left:40px;
+            background-color:#FFFFFF;
+            color: #C17130;
+            border:2px solid #C17130;
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+ }
+         
+
+        .input-field:focus {
+            border-color: #C17130;
+            box-shadow: 0 0 8px rgba(193, 113, 48, 0.6);
+            margin-left:12px;
+        }
+
+        .login-button {
+            background-color: #C17130;
+            color: #FFFFFF;
+            padding: 14px;
+            border: 0;
+            border-radius: 25px;
+            cursor: pointer;
+            width: 90%;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+            margin-top:5px;
+        }
+
+        .login-button:hover {
+            background-color: #A15E26;
+        }
+         .remember-me{
+          float:left;
+}
+
+        .forgot-password {
+            text-decoration: none;
+            float:right;
+            font-size: 14px;
+            margin-top: 1px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .forgot-password:hover {
+            color: #A15E26;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+            font-size: 22px;
+            padding: 4px;
+        }
+
+        .social-icon {
+            font-size: 22px;
+            margin: 0 10px;
+            cursor: pointer;
+            color: #FFFFFF;
+            background-color:#C17130;
+            padding: 8px;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+            border-radius:50%;
+        }
+
+        .social-icon:hover {
+            background-color:#FFFFFF;
+            color: #C17130;
+            border-radius: 50%;
+        }
+
+        .or-text {
+            font-size: 16px;
+            margin: 20px 0;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+<h2>Login</h2>
+        <div class="input-group">
+            <i style="color:#C17130;" class="fas fa-envelope icon"></i>
+            <input type="email" class="input-field" placeholder="Email" required>
+        </div>
+        <br>
+        <div class="input-group">
+            <i style="color:#C17130;"class="fas fa-lock icon"></i>
+            <input type="password" class="input-field" placeholder="Password" required>
+
+        </div>
+        <div class="remember-me">
+            <input style="padding:15px;"type="checkbox" id="rememberMe">
+            <label for="rememberMe" style="color:white;">Remember Me?</label>
+        </div>
+ <div class="forgot-password">
+            <a style="color:white;" href="forgotpass.html">Forgot Password?</a>
+        </div>
+        <button type="submit" class="login-button" onclick="login()">Login</button>
+        <div class="or-text">-Or Sign Up With-</div>
+        <div class="social-icons">
+            <a  href="https://accounts.google.com/AccountChooser/signinchooser?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=AccountChooser&ec=asw-gmail-globalnav-signin&theme=glif" class="social-icon"><i class="fab fa-google"></i></a>
+            <a  href="https://twitter.com/i/flow/login" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a  href="https://www.facebook.com/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </div>
+
+</body>
+<script>
+        function login() {
+            alert("Login successful!");
+            // Redirect to the home page
+            window.location.href = "home2.html";
+        }
+    </script>
+
+</html>

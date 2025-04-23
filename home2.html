@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {box-sizing: border-box;}
+
+body {
+background-color:white;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    background-color:#FAF6F0;
+    padding: 5px;
+    text-align: center;
+ height:3%;
+}
+
+
+.topnav {
+  overflow: hidden;
+ display: flex;
+    align-items: flex-start;
+}
+
+.topnav .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    border: 1px solid F5F3E0;
+    border-radius: 20px;
+    width: 23%; 
+    margin-left: auto;
+    margin-right: 390px;
+    background-color:white;
+    border:1px solid #C17130;
+     
+}
+
+.topnav input[type=text] {
+    outline:none;
+    padding: 10px 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 50px; 
+}
+
+.topnav button {
+    padding: 6px;
+    border: none;
+    background-color:white;
+    color:#C17130;
+    cursor: pointer;
+    margin-left: 8px;
+    border-radius: 20px; 
+}
+.topnav button:hover{
+background-color:#C17130;
+color:white;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav h2,
+  .topnav a,
+  .topnav.search-container;
+ {
+    float: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+  }
+}
+.topnav a {
+  float: right;
+  padding: 10px;
+  color:#C17130;
+  text-decoration: none;
+  font-size: 20px;
+  margin-top:50px;
+  
+}
+
+.topnav a:hover {
+  background-color:#C17130;
+  margin-bottom:2px;
+ border-radius:50%;
+ color:#3F2B27
+
+}
+
+    .content {
+      padding: 0; 
+overflow:auto;
+    }
+
+.icon-bar {
+  background-color:#C17130;
+  display: flex;
+  padding: 8px 0;
+  margin-top: 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+
+  }
+
+.icon-bar a {
+  text-align: center;
+  padding:2px;
+  color:white;
+  font-size: 18px;
+  border: 1px solid transparent;
+  transition: background-color 0.3s, padding 0.3s;
+  display: inline-block;
+width:10%;
+margin-left:160px;
+  
+}
+
+.icon-bar a:hover {
+ background-color:#3F2B27;
+color:white;
+}
+
+
+    @media screen and (max-width: 500px) {
+      .icon-bar a {
+        float: none;
+      }
+    }
+.mySlides {
+display: none;
+}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1500px;
+  position: relative;
+  margin:auto;
+
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  float: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,1);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #D7CEC7;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.4s ease;
+}
+      
+.active, .dot:hover {
+  background-color:#C17130;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 0.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+.card2 {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #FAF6F0;
+  margin-right: 10px;
+  border: 1px solid #C17130;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+@media only screen and (max-width: 600px) {
+  .card2 {
+    max-width: 100%; /* Adjust to fit smaller screens */
+    margin-right: 0; /* Remove right margin for better responsiveness */
+  }
+}
+
+.card2:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+    
+div.scroll-container {
+  background-color: #C17130;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+  float: left;
+  width: 45%;
+  height: 50%;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+div.scroll-container img {
+  padding: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+div.scroll-container img:hover {
+  transform: scale(0.9);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+  div.scroll-container {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+.card-container {
+            display: flex;
+            overflow-x: auto;
+            padding: 5px;
+           scroll-snap-type: x mandatory;
+            white-space: nowrap;
+           align-items:center;
+        }
+
+        .card {
+            flex: 0 0 auto;
+            width: 200px;
+            height:250px;
+            background-color:#FAF6F0;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            margin-right: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            scroll-snap-align: start;
+            border:1px solid black;
+          
+           border: 1px solid #C17130;
+        }
+
+        .card img {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            align-items:center;
+            justify-content:center;
+            margin-top:20px;
+        }
+
+.card-container1 {
+    display: flex;
+    overflow-x: auto;
+    padding: 5px;
+    align-items: center;
+    background-color:#C17130;
+}
+
+.card1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 200px;
+    height: 250px;
+    background-color:transparent;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0);
+    margin-right: 10px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.card1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card1:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a box shadow on hover */
+  transform: scale(1.05); /* Increase the size on hover */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add a smooth transition */
+  background-color: #FAF6F0;
+}
+
+.card1-content {
+    text-align: center;
+    color:black;
+} 
+
+.review-container {
+          display: flex;
+          overflow-x: auto; /* Enable horizontal scrolling */
+          flex-wrap: nowrap; /* Make sure items are in a single line */
+          justify-content: flex-start; /* Align items at the start */
+          margin-bottom: 20px; /* Add some space at the bottom */
+         
+        } 
+
+        .review-card {
+          width: 300px;
+          margin-right: 20px; /* Add some space between cards */
+          text-align: left;
+          background-color: #FAF6F0;
+          padding: 15px;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          display: flex;
+          align-items: center;
+          margin-left:15px;
+border:1px solid #C17130;
+        }
+.review-container :hover{
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a box shadow on hover */
+  transform: scale(1.05); /* Increase the size on hover */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add a smooth transition */
+background-color:#C17130;
+}
+
+        .review-card img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin-right: 15px;
+        }
+
+        .review-card .review-content {
+          flex: 1;
+        }
+
+        .review-card h3 {
+          margin-bottom: 10px;
+        }
+
+        .star-rating {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+        }
+
+        .star-rating span {
+          font-size: 20px;
+          color: #FFD700; /* Golden yellow color for stars */
+        }
+
+        .compliment {
+          font-size: 16px;
+        }
+/* Footer Styles */
+footer {
+    background-color:#C17130;
+    color: white;
+    padding: 30px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 200px;
+    margin-bottom: 20px;
+
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-align:center;
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.quick-links ul {
+    list-style-type:none;
+    padding: 10px;
+   
+}
+
+.quick-links li {
+    margin-bottom: 8px;
+    font-size:20px;
+}
+
+.social-media .social-icons {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px; 
+}
+
+.social-icons .icon-link {
+    margin-right: 10px;
+    color: #C17130;
+    font-size: 1.5rem;
+ padding:4px;
+border-radius:50px;
+background-color:white;
+
+   
+}
+.social-icons .icon-link:hover {
+background-color:#C17130;
+color:white;
+}
+    
+
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-section {
+        width: 100%;
+    }
+} 
+
+    </style>
+</head>
+<body>
+<header>
+  <div class="topnav">
+    <img align="left" src="hibs1.png" width="100" height="80" style=" margin-top:10px;margin-left:20px;margin-bottom:5px;">
+    
+<div class="search-container">
+        <input type="text" placeholder="Search...">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+    <a href="#"><i class="fa fa-fw fa-user"></i></a> 
+    <a href="#"><i class="fa fa-fw fa-shopping-cart"></i></a> 
+    <a href="#"><i class="fa fa-fw fa-heart"></i></a> 
+  </div>
+</header><br>
+
+<div class="content">
+      <div class="icon-bar">
+
+<a href="home2.html"><i class="fa fa-home"> Home</i></a> 
+<a href="catalouge.html"><i class="fa fa-list-alt"> catalog</i></a>
+<a href="reg2.html"><i class="fa fa-file-text"> Registration</i></a>
+<a href="login 3.1.html"><i class="fa fa-sign-in"> Login</i></a>
+</div><br>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+
+  <img src="https://d34a0mln2492j4.cloudfront.net/unsigned/resize:fit:2880:700:0/gravity:sm/plain/https%3A%2F%2Fs3-ap-south-1.amazonaws.com%2Fbookscape-s3-bucket%2F17BB69ABF5Desktop-min.jpg" style="width:100%">
+ 
+</div>
+
+<div class="mySlides fade">
+
+  <img src="https://d34a0mln2492j4.cloudfront.net/unsigned/resize:fit:2880:700:0/gravity:sm/plain/https%3A%2F%2Fs3-ap-south-1.amazonaws.com%2Fbookscape-s3-bucket%2F2CB911A5F7Percy_Jackson_hero_web.jpg" style="width:100%">
+  
+</div>
+
+<div class="mySlides fade">
+ 
+  <img src="https://d34a0mln2492j4.cloudfront.net/unsigned/resize:fit:2560:480:0/gravity:sm/plain/https%3A%2F%2Fs3-ap-south-1.amazonaws.com%2Fbookscape-s3-bucket%2FDEEB829B73image_(1).png" style="width:100%">
+
+</div>
+<div class="mySlides fade">
+ 
+  <img src="https://d34a0mln2492j4.cloudfront.net/unsigned/resize:fit:2880:700:0/gravity:sm/plain/https%3A%2F%2Fs3-ap-south-1.amazonaws.com%2Fbookscape-s3-bucket%2FCEC2CE334DCharles_dickens_christmas_web_banner.jpg" style="width:100%">
+
+</div>
+<div class="mySlides fade">
+ 
+  <img src="https://d34a0mln2492j4.cloudfront.net/unsigned/resize:fit:2560:480:0/gravity:sm/plain/https%3A%2F%2Fs3-ap-south-1.amazonaws.com%2Fbookscape-s3-bucket%2F5D5E40AAE8Static_Banner_WEB-min_(2).jpg" style="width:100%">
+
+</div>
+
+<a class="prev" onclick="plusSlides(-1); stopAutoSlide();">&#10094;</a>
+<a class="next" onclick="plusSlides(1); stopAutoSlide();">&#10095;</a>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+<span class="dot" onclick="currentSlide(3)"></span> 
+<span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+<script>
+    var slideIndex = 1;
+    var slideInterval;
+
+    function startAutoSlide() {
+        slideInterval = setInterval(function () {
+            plusSlides(1);
+        }, 2000); // Change slide every 2 seconds (adjust as needed)
+    }
+
+    function stopAutoSlide() {
+        clearInterval(slideInterval);
+    }
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = 4);
+        stopAutoSlide(); // Stop automatic slideshow when a specific slide is selected
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        showSlides(slideIndex);
+        startAutoSlide(); // Start automatic slideshow
+    });
+</script>
+</div>
+<br>
+
+
+<br>
+<h2 align="center" style="color: #C17130;">Trending Books</h2>
+<div class="card-container">
+
+    <div class="card">
+        <img src="https://www.bookswagon.com/productimages/images200/449/9781421522449.jpg" alt="Card Image">
+    </div>
+ <div class="card">
+        <img src="https://www.bookswagon.com/productimages/images200/544/9781421520544.jpg" alt="Card Image">
+    </div>
+ <div class="card">
+        <img src="https://www.bookswagon.com/productimages/images200/700/9781974738700.jpg" alt="Card Image">
+    </div>
+ <div class="card">
+        <img src="https://www.bookswagon.com/productimages/images200/456/9781421522456.jpg" alt="Card Image">
+    </div>
+ <div class="card">
+        <img src="https://www.bookswagon.com/productimages/images200/119/9780062511119.jpg" alt="Card Image">
+    </div>
+ <div class="card">
+        <img src="https://www.bookswagon.com/productimages/images200/939/9781974738939.jpg" alt="Card Image">
+    </div>
+ <div class="card">
+        <img src="https://www.bookswagon.com/productimages/images200/463/9781421522463.jpg" alt="Card Image">
+    </div>
+ <div class="card">
+        <img src="https://www.bookswagon.com/productimages/images200/449/9781421522449.jpg" alt="Card Image">
+    </div>
+ <div class="card">
+        <img src="https://www.bookswagon.com/productimages/images200/544/9781421520544.jpg" alt="Card Image">
+    </div>
+ <div class="card">
+        <img src="https://www.bookswagon.com/productimages/images200/700/9781974738700.jpg" alt="Card Image">
+    </div>
+ <div class="card">
+        <img src="https://www.bookswagon.com/productimages/images200/456/9781421522456.jpg" alt="Card Image">
+    </div>
+ <div class="card">
+        <img src="https://www.bookswagon.com/productimages/images200/119/9780062511119.jpg" alt="Card Image">
+    </div>
+ <div class="card">
+        <img src="https://www.bookswagon.com/productimages/images200/939/9781974738939.jpg" alt="Card Image">
+    </div>
+ <div class="card">
+        <img src="https://www.bookswagon.com/productimages/images200/463/9781421522463.jpg" alt="Card Image">
+    </div>
+<a href="main.html">see all</a>
+</div>
+    </div><br>
+<div class="scroll-container">
+  <img src="https://images.pexels.com/photos/4033684/pexels-photo-4033684.jpeg?auto=compress&cs=tinysrgb&w=600" width="500" height="260">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6PhpWBtzuDT2v75HlNnmsuqxk90c4LS3guQ&usqp=CAU" alt="Forest" width="500" height="260">
+  <img src="https://highthemes.com/wp-content/uploads/2017/10/vg_skybook_wp_theme-e1508685267977.jpg" alt="Northern Lights" width="500" height="260">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg992K6lJ_YN8zg1Eh0WkJD4RHXEeKfQgy7A&usqp=CAU" alt="Mountains" width="500" height="260">
+</div><br>
+<div class="card2">
+<h1 align:"right" style="color:black;">About Us</h1>
+<p>Dear readers,<br>
+Welcome to HITS Bookstore – your literary sanctuary in pendurthi. Established in 2023, we are passionate about connecting readers with captivating stories. Our carefully curated selection of books caters to diverse tastes, offering a haven for book lovers. Whether you visit our charming physical store or explore our online platform, we invite you to join our community of avid readers. At HITS Bookstore, we believe in the transformative power of books and the joy of literary exploration. Happy reading!
+</p>
+</div>
+
+
+<br>
+<h2 align="center" style="color:#C17130;;background-color:black">Featured Authors</h2>
+<div class="card-container1">
+
+<div class="card1">
+        <img src="https://d2g9wbak88g7ch.cloudfront.net/authorimages/arundhatistory_647_100316054702.jpg"  style="border-radius:50%";>
+<div class="card1-content">
+<p>Arundhati Roy</p>
+    </div>
+</div>
+ <div class="card1">
+        <img src="https://d2g9wbak88g7ch.cloudfront.net/authorimages/stephan-coonts.jpg" style="border-radius:50%";>
+<div class="card1-content">
+<p>STEPHEN COONTS</p>
+    </div>
+    </div>
+ <div class="card1">
+        <img src="https://d2g9wbak88g7ch.cloudfront.net/authorimages/william-wordsworth-8.jpg" alt="Card Image" style="border-radius:50%";>
+<div class="card1-content">
+<p>William Wordsworth</p>
+    </div>
+    </div>
+ <div class="card1">
+        <img src="https://d2g9wbak88g7ch.cloudfront.net/authorimages/stephen-edwin-king.jpg" style="border-radius:50%";>
+<div class="card1-content">
+<p>Stephen Edwin King</p>
+    </div>
+    </div>
+ <div class="card1">
+        <img src="https://d2g9wbak88g7ch.cloudfront.net/authorimages/download.jpg" alt="Card Image" style="border-radius:50%";>
+<div class="card1-content">
+<p>ohn Michael Green</p>
+    </div>
+    </div>
+ <div class="card1">
+        <img src="https://d2g9wbak88g7ch.cloudfront.net/authorimages/dillian.jpg" alt="Card Image" style="border-radius:50%";>
+<div class="card1-content">
+<p>Gillian Flynn</p>
+    </div>
+    </div>
+<div class="card1">
+        <img src="https://d2g9wbak88g7ch.cloudfront.net/authorimages/gayle-forman.jpg" alt="Card Image" style="border-radius:50%";>
+<div class="card1-content">
+<p>Gayle Forman</p>
+    </div>
+    </div>
+<a href="author.html">see all</a>
+</div><br>
+
+<h2 align="center" style="color:#C17130;">Reviews</h2>
+<div class="review-container">
+
+   
+    <div class="review-card">
+      <img src="teju.jpg" alt="Review 1">
+      <div class="review-content">
+        <h3>Teja Sri</h3>
+        <div class="star-rating">
+          <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>
+        </div>
+        <p class="compliment">It's Good we want more features</p>
+      </div>
+    </div>
+
+
+    <div class="review-card">
+      <img src="sneha.jpg" alt="Review 2">
+      <div class="review-content">
+        <h3>Sneha</h3>
+        <div class="star-rating">
+          <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+        </div>
+        <p class="compliment">good and simple looking and all books are available</p>
+      </div>
+    </div>
+    <div class="review-card">
+      <img src="sathvika.jpg" alt="Review 3">
+      <div class="review-content">
+        <h3>Sathvika</h3>
+        <div class="star-rating">
+          <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span>
+        </div>
+        <p class="compliment">simply I love this</p>
+      </div>
+    </div>
+<div class="review-card">
+      <img src="swaroop.jpg" alt="Review 4">
+      <div class="review-content">
+        <h3>Hima Swaroop</h3>
+        <div class="star-rating">
+          <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+        </div>
+        <p class="compliment">it's more better than other stores</p>
+      </div>
+    </div>
+</div>
+<br>
+<footer>
+    <div class="footer-container">
+        <div class="footer-section quick-links">
+            <h3 align="center"style="font-size:18px;">Quick Links</h3>
+            <ul>
+                <li><a href="home2.html">Home</a></li>
+                <li><a href="catalouge.html">Catalogue</a></li>
+                <li><a href="reg2.html">Registration</a></li>
+                <li><a href="login 3.1.html">Login</a></li>
+                
+            </ul>
+        </div>
+
+        <div class="footer-section social-media">
+            <h3 align="center" style="font-size:18px;">Follow Us</h3>
+       
+            <div class="social-icons">
+                 <a href="https://google.com" class="icon-link"><i class="fa fa-google"></i></a>
+            <a href="https://twitter.com" class="icon-link"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.facebook.com" class="icon-link"><i class="fa fa-facebook-f"></i></a>
+            </div>
+        </div>
+
+         <div class="footer-section contact">
+            <h3 align="center" style="font-size:18px;">Contact With Us</h3>
+            <p align="center" style="font-size:18px;">
+                pendurthi sontyam<br>
+                Phone-no: 00-11-1111-11<br>
+                <a style="color:pink;"href="hits@gmail.com">hits@gmail.com</a>
+            </p>
+        </div>
+        </div>
+
+   <div class="footer-bottom">
+        <p style="font-size:18px;">&copy; 2023 HITS Bookstore. All rights reserved. | Designed by HITS</p>
+    </div>
+</footer>
+
+
+</body>
+</html>

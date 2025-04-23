@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("https://img.freepik.com/free-photo/stack-books-table_23-2147896606.jpg?size=626&ext=jpg&ga=GA1.1.1673099933.1703487194&semt=ais") center/cover no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 400px;
+            background: transparent;
+            padding: 20px;
+            padding-right: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1.0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        h2 {
+            text-align: center;
+            color: #C17130;
+        }
+
+        .input-group {
+            position: relative;
+            width: 100%;
+            margin: 15px 0;
+        }
+
+        .input-group i {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-left: 18px;
+            color: #C17130;
+            margin-bottom: 10px;
+        }
+
+        .input-field {
+            width: calc(100% - 25px);
+            padding: 14px;
+            box-sizing: border-box;
+            border-radius: 25px;
+            font-size: 16px;
+            padding-left: 40px;
+            background-color: #FFFFFF;
+            color: #C17130;
+            border: 2px solid #C17130;
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .input-field:focus {
+            border-color: #C17130;
+            box-shadow: 0 0 8px rgba(193, 113, 48, 0.6);
+            margin-left: 12px;
+        }
+
+        label {
+            margin-bottom: 5px;
+            color: black;
+        }
+
+        .box {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+       .button-like-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #C17130;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            width:90%;
+            text-align:center;
+            border-radius:50px;
+        }
+         .button-like-link:hover {
+            background-color: #A15E26;
+        }
+
+        form {
+            display: block;
+            width: 100%;
+        }
+
+        span {
+            display: inline-block;
+        }
+
+ 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm">
+            <i style="color:#C17130;" class="fas fa-user-alt"></i>
+            <label for="username"><b>Username:</b></label>
+            <div class="input-group">
+                <input type="text" id="username" name="username" class="box input-field" placeholder="Username" required>
+            </div>
+
+            <i style="color:#C17130;" class="fas fa-envelope icon"></i>
+            <label for="email"><b>Email:</b></label>
+            <div class="input-group">
+                <input type="email" id="email" name="email" class="box input-field" placeholder="Email" required>
+            </div>
+
+            <i style="color:#C17130;" class="fas fa-lock icon"></i>
+            <label for="password"><b>Password:</b></label>
+            <div class="input-group">
+                <input type="password" id="password" name="password" class="box input-field" placeholder="Password" required>
+ <span id="passwordError" class="error">Password must be at least 8 characters, include one uppercase, one lowercase, and one number</span>
+            </div>
+
+            <i style="color:#C17130;" class="fas fa-lock icon"></i>
+            <label for="confirmPassword"><b>Confirm Password:</b></label>
+            <div class="input-group">
+                <input type="password" id="confirmPassword" name="confirmPassword" class="box input-field" placeholder="Confirm Password" required><br>
+            </div>
+<i style="color:#C17130;" class="fas fa-phone-alt icon"></i>
+  <label for="phone"><b>Phone No:</b></label>
+           <div class="input-group">
+    <input type="tel" id="phone" name="phone" class="box input-field" placeholder="Phone Number" required>
+    <span id="phoneError" class="error">Invalid phone number. Please enter 10 digits.</span>
+</div>
+
+            <b>Gender:</b><br><br>
+            <input type="radio" id="male" name="gender" value="male" checked><b>Male</b><br><br>
+            <input type="radio" id="female" name="gender" value="female"><b>Female</b><br><br>
+
+            <label for="date"><b>Date of birth:</b></label><br><br>
+            <input type="date" id="date"><br><br>
+
+            <label for="" style="color: #0b0906;"><b>Country:</b></label><br><br>
+            <select id="country" name="country" style="width: 100%; height: 30px;">
+                <option value="India">India</option>
+                <option value="canada">Canada</option>
+                <option value="uk">United Kingdom</option>
+                <option value="Australia">Australia</option>
+                <option value="South Korea">South Korea</option>
+                <option value="Germany">Germany</option>
+                <option value="Dubai">Dubai</option>
+                <option value="France">France</option>
+                <option value="Finland">Finland</option>
+                <option value="Ireland">Ireland</option>
+                <option value="Singapore">Singapore</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="Philippines">Philippines</option>
+                <!-- Add more options as needed -->
+            </select><br><br>
+
+            <b>Interested Areas:</b><br>
+            <div class="check">
+                <input type="checkbox">Horror
+                <input type="checkbox">Thriller
+                <input type="checkbox">Comedy
+                <input type="checkbox">Romance
+            </div><br><br>
+
+            <b>Upload ID here</b>
+            <input type="file"><br><br>
+
+            <a href="javascript:void(0);" onclick="alert('Registration successful!'); window.location.href='home2.html';" class="button-like-link">Register</a>
+
+        </form>
+    </div>
+</body>
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const passwordInput = document.getElementById("password");
+            const phoneInput = document.getElementById("phone");
+
+            passwordInput.addEventListener("input", function () {
+                const passwordError = document.getElementById("passwordError");
+                const isValid = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,12}$/.test(passwordInput.value);
+                passwordError.style.display = isValid ? "none" : "block";
+            });
+
+            phoneInput.addEventListener("input", function () {
+                const phoneError = document.getElementById("phoneError");
+                const isValid = /^\d{10}$/.test(phoneInput.value);
+                phoneError.style.display = isValid ? "none" : "block";
+            });
+        });
+    </script>
+</html>

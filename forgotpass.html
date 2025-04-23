@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Reset</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("https://img.freepik.com/premium-photo/empty-copy-space-tabletop-with-books-table-lamp-blurred-bookshelves-background_67155-26610.jpg?w=1060") center/cover no-repeat;
+}
+
+#login-container {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 2.0);
+            transition: transform 0.3s ease-in-out;
+    padding: 30px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+    
+    position: relative; /* Set relative positioning for the container */
+}
+ #login-container:hover {
+            transform: scale(1.02);
+        }
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-size: 16px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+input {
+    width: 100%;
+    padding: 10px 30px 10px 10px; /* Add padding on the right to make space for the icon */
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color:#FFFFFF;
+    color:#C17130;
+    position: relative; /* Set relative positioning for the input */
+ border:2px solid #C17130;
+transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+border-radius:25px;
+}
+
+.input-icon {
+    position: absolute; /* Set absolute positioning for the icon */
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px; /* Adjust the left position as needed */
+    color:#C17130;
+}
+
+.reset-password-button {
+    background-color:#C17130 ;
+    color: white;
+    padding: 12px;
+    border: 1px solid white;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+margin-top:10px;
+}
+
+.reset-password-button:hover {
+    background-color:  #A15E26;
+}
+
+.icon {
+    margin-right: 10px;
+    font-size: 18px;
+}
+</style>
+</head>
+<body>
+    <div id="login-container">
+        <form action="/reset-password" method="post">
+        <label for="new-password"><i style="color:#FFFFFF;" class="fas fa-lock icon"></i>Enter your new password:</label>
+        <input type="password" id="new-password" name="new-password" placeholder="New Password" required>
+        <label for="confirm-password"><i style="color:#FFFFFF;" class="fas fa-lock icon"></i>Confirm your new password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+        </form>
+        <a href="login 3.1.html" class="reset-password-button" id="reset-password-link">
+        <i class="fas fa-key icon"></i> Reset Password
+        </a>
+<script>
+document.getElementById('reset-password-link').addEventListener('click', function () {
+alert('Password reset successful!');
+            });
+</script>
+</div>
+</body>
+</html>

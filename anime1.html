@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {box-sizing: border-box;}
+
+body {
+background-color:white;
+  margin: 0;
+ font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    background-color: #FAF6F0;
+    padding: 5px;
+    text-align: center;
+}
+
+
+.topnav {
+  overflow: hidden;
+  display: flex;
+    align-items: flex-start;
+}
+.topnav h2{
+margin-left:15px;
+}
+
+.topnav .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    border: 1px solid F5F3E0;
+    border-radius: 20px;
+    width: 23%; 
+    margin-left: auto;
+    margin-right: 390px;
+    background-color:white;
+    border:1px solid #C17130;
+    margin-bottom:20px;
+     
+}
+
+.topnav input[type=text] {
+    outline:none;
+    padding: 10px 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 50px; 
+}
+
+.topnav button {
+    padding: 6px;
+    border: none;
+    background-color:white;
+    color:#C17130;
+    cursor: pointer;
+    margin-left: 8px;
+    border-radius: 20px; 
+}
+.topnav button:hover{
+background-color:#C17130;
+color:white;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav h2,
+  .topnav.search-container;
+ {
+    float: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+  }
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:#C17130 ;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+ 
+}
+
+.sidenav a {
+  padding:25px;
+  text-decoration: none;
+  font-size: 25px;
+  color:white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  background-color:#3F2B27;
+}
+a:hover{
+color:#C17130 ;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  background-color:  darkslategrey;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 60px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 10px;}
+  .sidenav a {font-size: 15px;}
+}
+
+ .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 20px;
+      margin-top: 10px;
+    }
+
+    .card{
+     width: calc(20% - 40px); /* Set the width for each card with some spacing */
+      margin-bottom: 20px;
+      background-color:white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+      align-items:center;
+      justify-content:center;
+      border:1px solid #C17130;
+    }
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a box shadow on hover */
+  transform: scale(1.05); /* Increase the size on hover */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; 
+  background-color:#FAF6F0;
+}
+
+.card-content{
+text-align:center;
+color: black;
+}
+.card.button{
+color:#C17130;
+}
+    @media (max-width: 600px) {
+      .card {
+        width: 100%; /* Full width for small screens */
+      }
+    }
+footer {
+    background-color:#C17130;
+    color: white;
+    padding: 30px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 200px;
+    margin-bottom: 20px;
+
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-align:center;
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.quick-links ul {
+    list-style-type: none;
+    padding: 10px;
+
+   
+}
+
+.quick-links li {
+    margin-bottom: 8px;
+
+    font-size:20px;
+}
+
+.social-media .social-icons {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px; 
+}
+
+.social-icons .icon-link {
+    margin-right: 10px;
+    color: #C17130;
+    font-size: 1.5rem;
+ padding:4px;
+border-radius:50px;
+background-color:white;
+
+   
+}
+.social-icons .icon-link:hover {
+background-color:#C17130;
+color:white;
+}
+    
+
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+}
+.fa {
+  font-size: 25px;
+}
+.checked {
+  color: orange;
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-section {
+        width: 100%;
+    }
+} 
+</style>
+</head>
+<body>
+  <header>
+  <div class="topnav">
+    <span style="font-size:25px;cursor:pointer;float:left;color:#C17130;margin-top:19px;margin-left:5px;" onclick="openNav()">&#9776; </span>
+    <h2 text-align="left"><b>Anime</b></h2>
+<div class="search-container">
+        <input type="text" placeholder="Search...">
+        <button type="submit"><i class="fa fa-search"></i></button>
+</div>
+</div>
+</header>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="fantasy1.html">Sci-fi & Fantasy</a>
+      <a href="cookbooks1.html">Cook Books & Food</a>
+      <a href="comics1.html">Comics</a>
+      <a href="anime1.html">Anime</a>
+      <a href="horror1.html">Horror</a>
+ <a href="fiction1.html">Fiction</a>
+</div>
+<div class="card-container">
+
+   <div class="card">
+   
+
+  <img src="https://m.media-amazon.com/images/M/MV5BYzViZDg4ZmUtNDcxZS00ZDllLTgyY2ItYjdmNzFkZDBlYTEyXkEyXkFqcGdeQXVyMTA4NjE0NjEy.V1.jpg" style="width:100%;margin-top:2px;">
+
+<div class="card-content">
+  <h4>Mary and the Witche's Flower by <em>Ruby BarnHill,Kate Winslet & Jim BroadBent</em></h4>
+  <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+  <p class="price">$20</p>
+  <p><button style="background-color:#C17130;color:white;">Buy Now</button></p>
+</div>
+</div>
+ <div class="card">
+
+         <img src="https://eypv9389xyv.exactdn.com/wp-content/uploads/2021/02/weathering-with-you-1-copy.jpg?strip=all&lossy=1&ssl=1" style="width:100%;margin-top:2px;">
+<div class="card-content">
+  <h4>Weathering With You by <em>Makoto Shinkai</em> </h4>
+  <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+  <p class="price">$13.99</p>
+  <p><button style="background-color:#C17130;color:white;">Buy Now</button></p>
+</div>
+</div>
+ <div class="card">
+
+       <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/815Hq6BC0hL.AC_UF1000,1000_QL80.jpg" style="width:100%;margin-top:10px;">
+<div class="card-content">
+  <h4>Jujutsu Kaisen <em>Gege Akutami</em></h4>
+  <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+  <p class="price">$19.99</p>
+  <p><button style="background-color:#C17130;color:white;">Buy Now</button></p>
+</div>
+</div>
+ <div class="card">
+
+         <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/913v5KU9w8L.AC_UF1000,1000_QL80.jpg" alt="Denim Jeans" style="width:100%;margin-top:10px;">
+<div class="card-content">
+  <h4>Sasaki Miyano by <em>Shou Horusono</em> </h4>
+  <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+  <p class="price">$12.39</p>
+  <p><button style="background-color:#C17130;color:white;">Buy Now</button></p>
+</div>
+</div>
+ <div class="card">
+
+        <img src="https://images.squarespace-cdn.com/content/v1/571abd61e3214001fb3b9966/1627001589359-MT2KFWAXB2B72ULVHKLU/Your+Name+Visual+Guide.jpg?format=1500w" alt="Denim Jeans" style="width:100%;margin-top:10px;">
+<div class="card-content">
+  <h4>Your Name by <em>Makoto Shinkai</em></h4>
+  <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+  <p class="price">$15.99</p>
+  <p><button style="background-color:#C17130;color:white;">Buy Now</button></p>
+</div>
+</div>
+ <div class="card">
+
+        <img src="https://m.media-amazon.com/images/M/MV5BMTJjZmQ5MGQtMWU0My00ZTMzLWFmNTMtNDgzNmU4Y2MxOGUxXkEyXkFqcGdeQXVyNTgyNTA4MjM@.V1_FMjpg_UX1000.jpg" alt="Denim Jeans" style="width:100%;margin-top:10px;">
+<div class="card-content">
+  <h4>The Garden of Words <em>Makoto Shinkai</em></h4>
+  <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+  <p class="price">$20.59</p>
+  <p><button style="background-color:#C17130;color:white;">Buy Now</button></p>
+</div>
+</div>
+ <div class="card">
+
+         <img src="https://s.pacn.ws/1/p/155/740905.1.jpg?v=rm98ni&width=800&crop=1953,2558" alt="Denim Jeans" style="width:100%;margin-top:10px;">
+<div class="card-content">
+  <h4>Suzume by <em>Makoto Shinkai</em></h4>
+  <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+  <p class="price">$19.99</p>
+  <p><button style="background-color:#C17130;color:white;">Buy Now</button></p>
+</div>
+</div>
+ <div class="card">
+
+         <img src="https://marketplace.canva.com/EAFbDPrk8kk/1/0/1003w/canva-yellow-comic-anime-love-romance-book-cover-dLihF7Y6ZMM.jpg" alt="Denim Jeans" style="width:100%;margin-top:10px;">
+<div class="card-content">
+  <h4>The Summer Lovestory by <em>Soo Jin Ae</em></h4>
+  <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+  <p class="price">$19.99</p>
+  <p><button style="background-color:#C17130;color:white;">Buy Now</button></p>
+</div>
+</div>
+ <div class="card">
+
+         <img src="https://i.pinimg.com/originals/3e/f3/e9/3ef3e9d7f5310452b494a51a9c9f5bbd.png" alt="Denim Jeans" style="width:100%;margin-top:10px;">
+<div class="card-content">
+  <h4>Clannad by <em>Tatsuya Ishihara</em></h4>
+  <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+  <p class="price">$12</p>
+  <p><button style="background-color:#C17130;color:white;">Buy Now</button></p>
+</div>
+</div>
+ <div class="card">
+
+         <img src="https://miro.medium.com/v2/resize:fit:1400/1*y3Q-anx6PofYggu5yMA4Gw.jpeg" alt="Denim Jeans" style="width:100%;margin-top:10px;">
+<div class="card-content">
+  <h4>The Wind Rises by <em>Joseph Gordon Levitt & Emily Blunt</em></h4>
+  <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+  <p class="price">$14</p>
+  <p><button style="background-color:#C17130;color:white;">Buy Now</button></p>
+</div>
+</div>
+
+</div>
+</div>
+<footer>
+    <div class="footer-container">
+        <div class="footer-section quick-links">
+            <h3 align="center"style="font-size:18px;">Quick Links</h3>
+            <ul>
+                <li><a href="home2.html">Home</a></li>
+                <li><a href="catalouge.html">Catalogue</a></li>
+                <li><a href="reg2.html">Registration</a></li>
+                <li><a href="login 3.1.html">Login</a></li>
+                
+            </ul>
+        </div>
+
+        <div class="footer-section social-media">
+            <h3 align="center" style="font-size:18px;">Follow Us</h3>
+       
+            <div class="social-icons">
+                 <a href="https://google.com" class="icon-link"><i class="fa fa-google"></i></a>
+            <a href="https://twitter.com" class="icon-link"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.facebook.com" class="icon-link"><i class="fa fa-facebook-f"></i></a>
+            </div>
+        </div>
+
+         <div class="footer-section contact">
+            <h3 align="center" style="font-size:18px;">Contact With Us</h3>
+            <p align="center" style="font-size:18px;">
+                pendurthi sontyam<br>
+                Phone-no: 00-11-1111-11<br>
+                <a style="color:pink;"href="hits@gmail.com">hits@gmail.com</a>
+            </p>
+        </div>
+        </div>
+
+   <div class="footer-bottom">
+        <p style="font-size:18px;">&copy; 2023 HITS Bookstore. All rights reserved. | Designed by HITS</p>
+    </div>
+</footer>
+<script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+      </script>    
+
+</body>
+</html>
